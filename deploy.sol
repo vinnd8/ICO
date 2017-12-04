@@ -233,7 +233,7 @@ contract VINNDTokenContract is StandardToken, SafeMath {
     /*
      * Token meta data
      */
-    string public constant name = "VINND.CO";
+    string public constant name = "VINND";
     string public constant symbol = "VIN";
     uint public constant decimals = 18;
 
