@@ -62,10 +62,10 @@ contract SafeMath {
     }
 
     // date bonus calculation
-    function dateBonus(uint startIco, uint currentType) internal returns (uint256) {
+    function dateBonus(uint startIco, uint currentType, uint datetime) internal returns (uint256) {
         if(currentType == 2){
             // day from ICO start
-            uint daysFromStart = (now - startIco) / DAY_IN_SECONDS + 1;
+            uint daysFromStart = (datetime - startIco) / DAY_IN_SECONDS + 1;
 
             if(daysFromStart == 1)  return 30; // +30% tokens
             if(daysFromStart == 2)  return 29; // +29% tokens
@@ -102,7 +102,7 @@ contract SafeMath {
         }
         if(currentType == 1){
             /// day from PreSale start
-            uint daysFromPresaleStart = (now - startIco) / DAY_IN_SECONDS + 1;
+            uint daysFromPresaleStart = (datetime - startIco) / DAY_IN_SECONDS + 1;
 
             if(daysFromPresaleStart == 1)  return 54;  // +54% tokens
             if(daysFromPresaleStart == 2)  return 51;  // +51% tokens
@@ -375,7 +375,7 @@ contract VINContract is SafeMath {
     /*
      * Modifiers
      */
-    
+
     modifier whenInitialized() {
         // only when contract is initialized
         require(currentStage >= Stage.Init);
@@ -419,7 +419,7 @@ contract VINContract is SafeMath {
         VINToken = new VINNDTokenContract(this);
         icoOwner = msg.sender;
     }
-    
+
     /// @dev Initialises addresses of founders, bountyOwner.
     /// Initialises balances of tokens owner
     /// @param _founder Address of founder
@@ -464,25 +464,25 @@ contract VINContract is SafeMath {
 
     /// @dev Buy quantity of tokens depending on the amount of sent ethers.
     /// @param _buyer Address of account which will receive tokens
-    function buyTokens(address _buyer) private {
+    function buyTokens(address _buyer, uint datetime, uint _value) private {
         assert(_buyer != 0x0);
-        require(msg.value > 0);
+        require(_value > 0);
 
         uint dateBonusPercent = 0;
         uint tokensToEmit = 0;
 
         //calculate date bonus and set emitTokenPrice
         if(currentType == Type.PRESALE){
-            tokensToEmit = msg.value * PRICE;
-            dateBonusPercent = dateBonus(startPresaleDate, 1);
+            tokensToEmit = _value * PRICE;
+            dateBonusPercent = dateBonus(startPresaleDate, 1, datetime);
         }
         else{
-            tokensToEmit = msg.value * ICOPRICE;
-            dateBonusPercent = dateBonus(startICODate, 2);
+            tokensToEmit = _value * ICOPRICE;
+            dateBonusPercent = dateBonus(startICODate, 2, datetime);
         }
 
         //calculate volume bonus
-        uint volumeBonusPercent = volumeBonus(msg.value);
+        uint volumeBonusPercent = volumeBonus(_value);
 
         //total bonus tokens
         uint totalBonusPercent = dateBonusPercent + volumeBonusPercent;
@@ -503,12 +503,12 @@ contract VINContract is SafeMath {
         //emit tokens to token holder
         VINToken.emitTokens(_buyer, tokensToEmit);
 
-        totalEther = add(totalEther, msg.value);
+        totalEther = add(totalEther, _value);
     }
 
     /// @dev Fall back function ~50k-100k gas
     function () payable onStageRunning checkType checkDateTime{
-        buyTokens(msg.sender);
+        buyTokens(msg.sender, now, msg.value);
     }
 
     /// @dev Burn tokens from accounts. Only manager can do it
@@ -535,4 +535,12 @@ contract VINContract is SafeMath {
         sentTokensToFounders = true;
     }
 
+    /// @dev Send tokens to other wallets
+    /// @param _buyer Address of account which will receive tokens
+    /// @param _datetime datetime of transaction
+    /// @param _ether ether value
+    function emitTokensToOtherWallet(address _buyer, uint _datetime, uint _ether) onlyManager checkType{
+        assert(_buyer != 0x0);
+        buyTokens(_buyer, _datetime, _ether * 10 ** 18);
+    }
 }
