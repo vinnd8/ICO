@@ -326,10 +326,10 @@ contract VINContract is SafeMath {
     uint public startPresaleDate = 1512950400;
     // 29.12.2017 23:59:59
     uint public endPresaleDate = 1514591999;
-    // 13.01.2018 00:00:00
-    uint public startICODate = 1515801600;
-    // 13.02.2018 23:59:59
-    uint public endICODate = 1518566399;
+    // 18.01.2018 00:00:00
+    uint public startICODate = 1516233600;
+    // 18.02.2018 23:59:59
+    uint public endICODate = 1518998399;
 
     // Address of manager
     address public icoOwner;
