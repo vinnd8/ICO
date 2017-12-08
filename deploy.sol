@@ -353,9 +353,9 @@ contract VINContract is SafeMath {
     // 1 ETH = 1500 VIN
     uint public constant ICOPRICE = 1500;
 
-    // 2018.02.15 00:00 UTC
+    // 2018.02.20 00:00 UTC
     // founders' reward time
-    uint public foundersRewardTime = 1518652800;
+    uint public foundersRewardTime = 1519084800;
 
     // Amount of sold tokens on ICO
     uint public totalSoldOnICO = 0;
