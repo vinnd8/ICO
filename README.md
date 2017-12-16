@@ -5,5 +5,3 @@ Smart contract for preparing to ICO
 # When your health shapes your body VINND
 
 ICO site - https://vinnd.io
-
-Official page - https://vinnd.co
