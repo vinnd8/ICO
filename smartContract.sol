@@ -67,62 +67,81 @@ contract SafeMath {
             // day from ICO start
             uint daysFromStart = (datetime - startIco) / DAY_IN_SECONDS + 1;
 
-            if(daysFromStart == 1)  return 30; // +30% tokens
-            if(daysFromStart == 2)  return 29; // +29% tokens
-            if(daysFromStart == 3)  return 28; // +28% tokens
-            if(daysFromStart == 4)  return 27; // +27% tokens
-            if(daysFromStart == 5)  return 26; // +26% tokens
-            if(daysFromStart == 6)  return 25; // +25% tokens
-            if(daysFromStart == 7)  return 24; // +24% tokens
-            if(daysFromStart == 8)  return 23; // +23% tokens
-            if(daysFromStart == 9)  return 22; // +22% tokens
-            if(daysFromStart == 10) return 21; // +21% tokens
-            if(daysFromStart == 11) return 20; // +20% tokens
-            if(daysFromStart == 12) return 19; // +19% tokens
-            if(daysFromStart == 13) return 18; // +18% tokens
-            if(daysFromStart == 14) return 17; // +17% tokens
-            if(daysFromStart == 15) return 16; // +16% tokens
-            if(daysFromStart == 16) return 15; // +15% tokens
-            if(daysFromStart == 17) return 14; // +14% tokens
-            if(daysFromStart == 18) return 13; // +13% tokens
-            if(daysFromStart == 19) return 12; // +12% tokens
-            if(daysFromStart == 20) return 11; // +11% tokens
-            if(daysFromStart == 21) return 10; // +10% tokens
-            if(daysFromStart == 22) return 9;  // +9% tokens
-            if(daysFromStart == 23) return 8;  // +8% tokens
-            if(daysFromStart == 24) return 7;  // +7% tokens
-            if(daysFromStart == 25) return 6;  // +6% tokens
-            if(daysFromStart == 26) return 5;  // +5% tokens
-            if(daysFromStart == 27) return 4;  // +4% tokens
-            if(daysFromStart == 28) return 3;  // +3% tokens
-            if(daysFromStart == 29) return 2;  // +2% tokens
-            if(daysFromStart == 30) return 1;  // +1% tokens
+            if(daysFromStart == 1)  return 60; // +60% tokens
+            if(daysFromStart == 2)  return 58; // +58% tokens
+            if(daysFromStart == 3)  return 56; // +56% tokens
+            if(daysFromStart == 4)  return 54; // +54% tokens
+            if(daysFromStart == 5)  return 52; // +52% tokens
+            if(daysFromStart == 6)  return 50; // +50% tokens
+            if(daysFromStart == 7)  return 48; // +48% tokens
+            if(daysFromStart == 8)  return 46; // +46% tokens
+            if(daysFromStart == 9)  return 44; // +44% tokens
+            if(daysFromStart == 10) return 42; // +42% tokens
+            if(daysFromStart == 11) return 40; // +40% tokens
+            if(daysFromStart == 12) return 38; // +38% tokens
+            if(daysFromStart == 13) return 36; // +36% tokens
+            if(daysFromStart == 14) return 34; // +34% tokens
+            if(daysFromStart == 15) return 32; // +32% tokens
+            if(daysFromStart == 16) return 30; // +30% tokens
+            if(daysFromStart == 17) return 28; // +28% tokens
+            if(daysFromStart == 18) return 26; // +26% tokens
+            if(daysFromStart == 19) return 24; // +24% tokens
+            if(daysFromStart == 20) return 22; // +22% tokens
+            if(daysFromStart == 21) return 20; // +20% tokens
+            if(daysFromStart == 22) return 18;  // +18% tokens
+            if(daysFromStart == 23) return 16;  // +16% tokens
+            if(daysFromStart == 24) return 14;  // +14% tokens
+            if(daysFromStart == 25) return 12;  // +12% tokens
+            if(daysFromStart == 26) return 10;  // +10% tokens
+            if(daysFromStart == 27) return 8;  // +8% tokens
+            if(daysFromStart == 28) return 6;  // +6% tokens
+            if(daysFromStart == 29) return 4;  // +4% tokens
+            if(daysFromStart == 30) return 2;  // +2% tokens
             if(daysFromStart == 31) return 1;  // +1% tokens
-            if(daysFromStart == 32) return 1;  // +1% tokens
+            if(daysFromStart == 32) return 0;  // +0% tokens
         }
         if(currentType == 1){
             /// day from PreSale start
             uint daysFromPresaleStart = (datetime - startIco) / DAY_IN_SECONDS + 1;
 
-            if(daysFromPresaleStart == 1)  return 54;  // +54% tokens
-            if(daysFromPresaleStart == 2)  return 51;  // +51% tokens
-            if(daysFromPresaleStart == 3)  return 48;  // +48% tokens
-            if(daysFromPresaleStart == 4)  return 45;  // +45% tokens
-            if(daysFromPresaleStart == 5)  return 42;  // +42% tokens
-            if(daysFromPresaleStart == 6)  return 39;  // +39% tokens
-            if(daysFromPresaleStart == 7)  return 36;  // +36% tokens
-            if(daysFromPresaleStart == 8)  return 33;  // +33% tokens
-            if(daysFromPresaleStart == 9)  return 30;  // +30% tokens
-            if(daysFromPresaleStart == 10) return 27;  // +27% tokens
-            if(daysFromPresaleStart == 11) return 24;  // +24% tokens
-            if(daysFromPresaleStart == 12) return 21;  // +21% tokens
-            if(daysFromPresaleStart == 13) return 18;  // +18% tokens
-            if(daysFromPresaleStart == 14) return 15;  // +15% tokens
-            if(daysFromPresaleStart == 15) return 12;  // +12% tokens
-            if(daysFromPresaleStart == 16) return 9;   // +9% tokens
-            if(daysFromPresaleStart == 17) return 6;   // +6% tokens
-            if(daysFromPresaleStart == 18) return 4;   // +4% tokens
-            if(daysFromPresaleStart == 19) return 0;   // +0% tokens
+            if(daysFromPresaleStart == 1)  return 60;  // +60% tokens
+            if(daysFromPresaleStart == 2)  return 58;  // +58% tokens
+            if(daysFromPresaleStart == 3)  return 56;  // +56% tokens
+            if(daysFromPresaleStart == 4)  return 54;  // +54% tokens
+            if(daysFromPresaleStart == 5)  return 52;  // +52% tokens
+            if(daysFromPresaleStart == 6)  return 50;  // +50% tokens
+            if(daysFromPresaleStart == 7)  return 48;  // +48% tokens
+            if(daysFromPresaleStart == 8)  return 46;  // +46% tokens
+            if(daysFromPresaleStart == 9)  return 44;  // +44% tokens
+            if(daysFromPresaleStart == 10) return 42;  // +42% tokens
+            if(daysFromPresaleStart == 11) return 40;  // +40% tokens
+            if(daysFromPresaleStart == 12) return 38;  // +38% tokens
+            if(daysFromPresaleStart == 13) return 36;  // +36% tokens
+            if(daysFromPresaleStart == 14) return 34;  // +34% tokens
+            if(daysFromPresaleStart == 15) return 32;  // +32% tokens
+            if(daysFromPresaleStart == 16) return 30;   // +30% tokens
+            if(daysFromPresaleStart == 17) return 28;   // +28% tokens
+            if(daysFromPresaleStart == 18) return 26;   // +26% tokens
+            if(daysFromPresaleStart == 19) return 24;   // +24% tokens
+            if(daysFromPresaleStart == 20) return 22;   // +22% tokens
+            if(daysFromPresaleStart == 21) return 20;   // +20% tokens
+            if(daysFromPresaleStart == 22) return 18;   // +18% tokens
+            if(daysFromPresaleStart == 23) return 16;   // +16% tokens
+            if(daysFromPresaleStart == 24) return 14;   // +14% tokens
+            if(daysFromPresaleStart == 25) return 12;   // +12% tokens
+            if(daysFromPresaleStart == 26) return 10;   // +10% tokens
+            if(daysFromPresaleStart == 27) return 8;   // +8% tokens
+            if(daysFromPresaleStart == 28) return 6;   // +6% tokens
+            if(daysFromPresaleStart == 29) return 4;   // +4% tokens
+            if(daysFromPresaleStart == 30) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 31) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 32) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 33) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 34) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 35) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 36) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 37) return 2;   // +2% tokens
+            if(daysFromPresaleStart == 38) return 2;   // +2% tokens
         }
 
         // no discount
@@ -324,8 +343,8 @@ contract VINContract is SafeMath {
 
     // 11.12.2017 00:00:00
     uint public startPresaleDate = 1512950400;
-    // 29.12.2017 23:59:59
-    uint public endPresaleDate = 1514591999;
+    // 17.01.2018 00:00:00
+    uint public endPresaleDate = 1516147200;
     // 18.01.2018 00:00:00
     uint public startICODate = 1516233600;
     // 18.02.2018 23:59:59
@@ -462,6 +481,14 @@ contract VINContract is SafeMath {
         icoOwner = _newicoOwner;
     }
 
+    /// @dev Ether withdraw. Only manager can do it
+    function withdrawAllEther() onlyManager {
+        if(this.balance > 0)
+        {
+            icoOwner.transfer(this.balance);
+        }
+    }
+
     /// @dev Buy quantity of tokens depending on the amount of sent ethers.
     /// @param _buyer Address of account which will receive tokens
     function buyTokens(address _buyer, uint datetime, uint _value) private {
@@ -535,12 +562,11 @@ contract VINContract is SafeMath {
         sentTokensToFounders = true;
     }
 
-    /// @dev Send tokens to other wallets
-    /// @param _buyer Address of account which will receive tokens
-    /// @param _datetime datetime of transaction
-    /// @param _ether ether value
-    function emitTokensToOtherWallet(address _buyer, uint _datetime, uint _ether) onlyManager checkType{
+    /// @dev emitToken to wallet
+    function emitTokenByOwner(address _buyer, uint _token) onlyManager{
         assert(_buyer != 0x0);
-        buyTokens(_buyer, _datetime, _ether * 10 ** 18);
+        //emit tokens to token holder
+        VINToken.emitTokens(_buyer, _token * 10 ** 18);
     }
+
 }
